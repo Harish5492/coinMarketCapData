@@ -4,7 +4,7 @@ import cors from 'cors';
 const app = express();
 const PORT = process.env.PORT || 3000;
 const apikey = '2ad9f937-58a4-458b-8613-72a2dc7350ef'; // Replace with your CoinMarketCap API key
-app.use(cors());
+app.use(cors('*'));
 
 const getListing = async (filter) => {
   let url = `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=${apikey}`;
